@@ -66,6 +66,16 @@ struct PartyDetailView: View {
                             Spacer()
                         }
                         .padding(.horizontal)
+                        
+                        HStack {
+                            Image(systemName: "figure.run.square.stack.fill")
+                                .foregroundStyle(.colorOnCta)
+                            Text(cardViewModel.amountGoingString)
+                                .font(.headline)
+                                .foregroundStyle(.colorOnCta)
+                            Spacer()
+                        }
+                        .padding(.horizontal)
 
                         Spacer(minLength: 100)
 

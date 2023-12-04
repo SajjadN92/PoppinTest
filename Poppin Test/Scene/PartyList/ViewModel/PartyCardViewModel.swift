@@ -12,11 +12,14 @@ struct PartyCardViewModel {
     let dateString: String
     let priceString: String
     let imageURL: URL
+    let amountGoing: Int
+    let amountGoingString: String
 
     init(party: Party) {
         name = party.name
         priceString = party.price.getPriceString()
         imageURL = party.imageURL
+        amountGoingString = "\(party.amountGoing) Attendees"
 
         var dateString = party.startDate.getString()
         if let endDate = party.endDate {
@@ -27,5 +30,6 @@ struct PartyCardViewModel {
             }
         }
         self.dateString = dateString
+        self.amountGoing = party.amountGoing
     }
 }

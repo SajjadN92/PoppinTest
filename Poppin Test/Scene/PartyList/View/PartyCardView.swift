@@ -32,6 +32,28 @@ struct PartyCardView: View {
             }
 
             VStack {
+                HStack {
+                    HStack {
+                        Image(systemName: "figure.run.square.stack.fill")
+                            .foregroundStyle(.colorOnCta)
+                        Text("\(viewModel.amountGoing)")
+                            .font(.subheadline)
+                            .foregroundStyle(.colorOnCta)
+                    }
+                    .padding(.horizontal, 5)
+                    .padding(.vertical, 2)
+                    .background(
+                        RoundedRectangle(cornerRadius: Constants.cornerRadius)
+                        .fill(.colorCtaBackground.opacity(0.9))
+                    )
+
+                    Spacer()
+                }
+
+                Spacer()
+            }
+
+            VStack {
                 Spacer()
 
                 ZStack {

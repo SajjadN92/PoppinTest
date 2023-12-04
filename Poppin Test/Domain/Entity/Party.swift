@@ -9,6 +9,7 @@ import Foundation
 
 struct Party: Identifiable {
     let id = UUID().uuidString
+    let amountGoing: Int
     let name: String
     let imageURL: URL
     let price: Double
@@ -40,6 +41,7 @@ struct Party: Identifiable {
             "Aurora Affair"
         ]
         let imageNames = (1...8).compactMap { "party-\($0)" }
+        let amountGoing = Int.random(in: 0...40)
         let randomName = partyNames.randomElement()!
         let randomImageURL = Bundle.main.url(forResource: imageNames.randomElement()!, withExtension: "jpg")!
         let randomPrice = Double.random(in: 10.0...100.0)
@@ -48,6 +50,7 @@ struct Party: Identifiable {
         /// 18000 : 5 hours in seconds
         let randomEndDate = Bool.random() ? nil : randomStartDate.addingTimeInterval(Double.random(in: 1...18000))
         return Party(
+            amountGoing: amountGoing, 
             name: randomName,
             imageURL: randomImageURL,
             price: randomPrice,
